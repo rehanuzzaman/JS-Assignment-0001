@@ -1,32 +1,11 @@
-function electionResult(votes) {
-    if (!Array.isArray(votes)) {
+function isBestFriend(f1, f2) {
+    if (typeof f1 !== "object" || typeof f2 !== "object" || f1 === null || f2 === null) {
         return 'Invalid';
     }
 
-    let mangoCount = 0;
-    let bananaCount = 0;
-
-    for (let vote of votes) {
-        let lowerCaseVote = vote.toLowerCase();
-
-        if (lowerCaseVote === 'mango') {
-            mangoCount++;
-        }
-    
-        else if (lowerCaseVote === 'banana') {
-            bananaCount++;
-        }
+    if (f1.bestFriend === f2.roll && f2.bestFriend === f1.roll) {
+        return true;
     }
 
-    if (mangoCount > bananaCount) {
-        return 'Mango';
-    }
-
-    else if (bananaCount > mangoCount) {
-        return 'Banana'
-    }
-
-    else {
-        return 'Draw';
-    }
+    return false;
 }
